@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Carrossel de Imagens</title>
+<style>
+
+@media (max-width: 768px) { /* Estilos para telas menores que 768px de largura (tablets e celulares) */
+  .carousel img {
+    width: 70%; /* Largura da imagem em telas menores */
+    height: 70%; /* altura da imagem em telas menores */
+  }
+}
+
+h2 {
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 10px; /* Adiciona espaço abaixo do título */
+  font-family: sans-serif; /* Define a fonte do título */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.gallery {
+  width: 100%;
+}
+
+#container-carrossel {
+  width: 80%; /* Largura do contêiner em relação à tela */
+  margin: 20px auto; /* Centraliza o contêiner na página */
+  border: 3px solid #ccc; /* Adiciona uma borda ao contêiner */
+  border-radius: 5px;
+  overflow: hidden; /* Garante que o carrossel não vaze do contêiner */
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 20%; /* Largura de cada imagem */
+  height: auto; /* Altura de cada imagem */
+  margin-right: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.navigation button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+#contador-relacionamento {
+  text-align: center;
+  margin-top: 20px;
+  font-style: oblique;
+  color: rgb(255, 0, 43);
+}
+
+/* Estilos gerais */
+#contador-relacionamento {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#tempo-juntos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tempo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.numero {
+  font-size: 2em;
+  font-weight: bold;
+  color: #e91e63; /* Rosa */
+}
+
+.unidade {
+  font-size: 0.8em;
+  color: #9c27b0; /* Roxo */
+}
+
+#declaracao-amor {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#declaracao-amor h3 {
+  font-size: 1.5em;
+  color: #e91e63; /* Rosa */
+}
+
+#declaracao-amor p {
+  font-size: 1em;
+  color: #9c27b0; /* Roxo */
+  line-height: 1.5;
+}
+
+/* Media Queries para dispositivos menores */
+@media (max-width: 768px) {
+  #tempo-juntos {
+    flex-direction: column; /* Layout em coluna em telas menores */
+    align-items: center;
+    gap: 10px;
+  }
+
+  .numero {
+    font-size: 1.5em;
+  }
+
+  .unidade {
+    font-size: 0.7em;
+  }
+
+  #declaracao-amor h3 {
+  font-size: 1.5em;
+}
+
+}
+
+@media (max-width: 480px) {
+  .numero {
+    font-size: 1.5em;
+  }
+
+  .unidade {
+    font-size: 1.5em;
+  }
+
+  #declaracao-amor p{
+    font-size: 1em;
+  }
+
+  #declaracao-amor h3 {
+  font-size: 1.5em;
+}
+
+}
+
+</style>
+</head>
+<body>
+    <h2>Galeria de Fotos</h2>
+<div id="container-carrossel">
+  <div class="gallery">
+    <div class="carousel">
+      </div>
+    <div class="navigation">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </div>
+</div>
+
+<div id="contador-relacionamento">
+    <h2>Contagem de Relacionamento</h2>
+    <div id="tempo-juntos">
+      <div class="tempo">
+        <span id="meses">0</span>
+        <span class="unidade">Meses</span>
+      </div>
+      <div class="tempo">
+        <span id="dias">0</span>
+        <span class="unidade">Dias</span>
+      </div>
+      <div class="tempo">
+        <span id="horas">0</span>
+        <span class="unidade">Horas</span>
+      </div>
+      <div class="tempo">
+        <span id="minutos">0</span>
+        <span class="unidade">Minutos</span>
+      </div>
+      <div class="tempo">
+        <span id="segundos">0</span>
+        <span class="unidade">Segundos</span>
+      </div>
+    </div>
+
+    <div id="declaracao-amor">
+      <h3>Meu poema para você</h3>
+      <p>
+        Foi no dia quatorze de novembro,<br>
+        Uma mensagem, um simples momento.<br>
+        Mas foi aí que minha vida mudou,<br>
+        Que um novo capítulo em nós começou.<br><br>
+    
+        De Vigia a Marituba, a distância é real,<br>
+        Mas o nosso amor é sobrenatural.<br>
+        São quilômetros que tentamos nos separar,<br>
+        mas um propósito maior nos faz lutar.<br><br>
+    
+        No dia quinze de dezembro, te vi, enfim,<br>
+        E naquele instante eu soube: é com ela até o fim.<br>
+        Mulher virtuosa, cheia de luz,<br>
+        Presente divino, promessa de Jesus.<br><br>
+
+        Sei que seus dias são de luta e cansaço,<br>
+        No hospital, carrega o mundo nos braços.<br>
+        Mas um dia, amor, ao voltar pra casa,<br>
+        Serei teu descanso, tua paz que embala.<br><br>
+    
+        Nossos sonhos já foram escritos no céu,<br>
+        Seremos pastores, mensageiros fiéis.<br>
+        Uma família teremos, filhos ao redor,<br>
+        Criados no amor, na graça do Senhor.<br><br>
+
+        E quando o dia cansativo chegar,<br>
+        Quando o peso do mundo quiser te dobrar,<br>
+        Serei teu refúgio, tua fortaleza,<br>
+        Te esperarei com amor e certeza.<br><br>
+
+        Serás minha rainha, minha inspiração,<br>
+        E farei de tudo para encher teu coração.<br>
+        Darei a você tudo de bom e do melhor,<br>
+        Porque você merece, minha flor.<br><br>
+
+        Juntos, viajaremos por terras distantes,<br>
+        Construiremos um lar brilhante.<br>
+        Investiremos, cresceremos, iremos além,<br>
+        Pois Deus escreveu nossa história tão bem.<br><br>
+
+        Nosso amor não conhece limites,<br>
+        Não se rende à distância ou às crises.<br>
+        Desde aquela mensagem, sei que é real,<br>
+        Que Deus nos uniu de forma especial.<br><br>
+
+        Seremos exemplo para quem desacredita,<br>
+        Mostraremos que o amor tudo conquista.<br>
+        Aos corações quebrados, vamos restaurar,<br>
+        E aos que sofrem, esperança levar.<br><br>
+
+        Pois não há barreira quando há compromisso,<br>
+        Quando há fé, carinho e um só destino.<br>
+        E mesmo longe, sei que o tempo virá,<br>
+        Onde, enfim, terei você para amar.<br><br>
+
+        Nosso lar será de paz e alegria,<br>
+        Com filhos, amor e harmonia.<br>
+        E ao final de cada longo dia,<br>
+        Te esperoei com carinho e poesia.<br><br>
+
+        Você nunca se arrependerá de casar comigo,<br>
+        Serei teu porto, teu maior abrigo.<br>
+        Pois Deus nos escolheu, nos preparamos,<br>
+        E um futuro lindo para nós reservamos.<br><br>
+
+        Te amo para tudo sempre!
+      </p>
+    </div>
+
+</div>
+
+  <script>
+const carousel = document.querySelector('.carousel');
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+const images = [];
+let currentIndex = 0;
+let isDragging = false;
+let startX = 0;
+
+// Carregar imagens dinamicamente
+for (let i = 1; i <= 50; i++) {
+  const img = document.createElement('img');
+  img.src = `images/image${i}.jpeg`;
+  img.alt = `Imagem ${i}`;
+  images.push(img);
+  carousel.appendChild(img);
+
+  // Adiciona ouvinte de eventos de clique
+  img.addEventListener('click', () => {
+    visualizarImagem(i);
+  });
+}
+
+function visualizarImagem(index) {
+  // Cria um elemento de imagem ampliada
+  const imagemAmpliada = document.createElement('img');
+  imagemAmpliada.src = `images/image${index}.jpeg`;
+  imagemAmpliada.alt = `Imagem ${index}`;
+
+  // Adiciona estilos para a imagem ampliada (opcional)
+  imagemAmpliada.style.maxWidth = '90%';
+  imagemAmpliada.style.maxHeight = '90%';
+  imagemAmpliada.style.margin = '20px auto';
+  imagemAmpliada.style.display = 'block';
+
+  // Cria um overlay (fundo escuro) para a imagem ampliada
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = '0';
+  overlay.style.left = '0';
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  overlay.style.display = 'flex';
+  overlay.style.justifyContent = 'center';
+  overlay.style.alignItems = 'center';
+  overlay.style.zIndex = '9999'; // Garante que o overlay fique acima de outros elementos
+
+  // Adiciona a imagem ampliada ao overlay
+  overlay.appendChild(imagemAmpliada);
+
+  // Adiciona o overlay ao corpo da página
+  document.body.appendChild(overlay);
+
+  // Adiciona ouvinte de eventos de clique ao overlay para fechar a imagem ampliada
+  overlay.addEventListener('click', () => {
+    document.body.removeChild(overlay);
+  });
+}
+
+// Função para clonar as imagens (mesma lógica anterior)
+function cloneImages() {
+  // ... (código da função cloneImages)
+}
+
+cloneImages(); // Clonar imagens no início e no fim
+
+function showImages() {
+  const translateX = -currentIndex * 210; // Largura da imagem + margem
+  carousel.style.transition = isDragging ? 'none' : 'transform 0.5s ease-in-out'; // Remove a transição durante o arrastar
+  carousel.style.transform = `translateX(${translateX}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+  currentIndex++;
+  showImages();
+});
+
+prevButton.addEventListener('click', () => {
+  currentIndex--;
+  showImages();
+});
+
+// Eventos de arrastar com o mouse (mesma lógica anterior)
+carousel.addEventListener('mousedown', (e) => {
+  // ... (código dos eventos de arrastar com o mouse)
+});
+
+// Eventos de arrastar com os dedos (mesma lógica anterior)
+carousel.addEventListener('touchstart', (e) => {
+  // ... (código dos eventos de arrastar com os dedos)
+});
+
+// Função para reposicionar o carrossel
+function repositionCarousel() {
+  const totalImages = images.length;
+  if (currentIndex < 0) {
+    currentIndex = totalImages - 1;
+    carousel.style.transition = 'none'; // Remove a transição para o reposicionamento
+    carousel.style.transform = `translateX(${-currentIndex * 210}px)`;
+    setTimeout(() => {
+      carousel.style.transition = 'transform 0.5s ease-in-out'; // Restaura a transição
+    }, 0); // Aguarda o próximo ciclo de atualização para restaurar a transição
+  } else if (currentIndex >= totalImages) {
+    currentIndex = 0;
+    carousel.style.transition = 'none'; // Remove a transição para o reposicionamento
+    carousel.style.transform = `translateX(0px)`;
+    setTimeout(() => {
+      carousel.style.transition = 'transform 0.5s ease-in-out'; // Restaura a transição
+    }, 0); // Aguarda o próximo ciclo de atualização para restaurar a transição
+  }
+}
+
+// Adicionar evento de transição para reposicionar o carrossel
+carousel.addEventListener('transitionend', repositionCarousel);
+
+showImages(); // Exibir imagens iniciais
+
+const mesesSpan = document.getElementById('meses');
+const diasSpan = document.getElementById('dias');
+const horasSpan = document.getElementById('horas');
+const minutosSpan = document.getElementById('minutos');
+const segundosSpan = document.getElementById('segundos');
+
+const dataInicio = new Date('2024-11-14');
+
+function atualizarContagem() {
+  const dataAtual = new Date();
+  const diferenca = dataAtual.getTime() - dataInicio.getTime();
+
+  const meses = Math.floor(diferenca / (1000 * 60 * 60 * 24 * 30));
+  const dias = Math.floor((diferenca % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+  mesesSpan.textContent = meses;
+  diasSpan.textContent = dias;
+  horasSpan.textContent = horas;
+  minutosSpan.textContent = minutos;
+  segundosSpan.textContent = segundos;
+}
+
+atualizarContagem();
+setInterval(atualizarContagem, 1000);
+
+  </script>
+</body>
+</html>
