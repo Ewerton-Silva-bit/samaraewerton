@@ -355,9 +355,33 @@ carousel.addEventListener('mousedown', (e) => {
   // ... (código dos eventos de arrastar com o mouse)
 });
 
-// Eventos de arrastar com os dedos (mesma lógica anterior)
+// Variáveis para controle do arrastar com toque
+let isDraggingTouch = false;
+let startXTouch = 0;
+let currentTranslateX = 0;
+
+// Eventos de toque
 carousel.addEventListener('touchstart', (e) => {
-  // ... (código dos eventos de arrastar com os dedos)
+  isDraggingTouch = true;
+  startXTouch = e.touches[0].clientX;
+  currentTranslateX = parseFloat(carousel.style.transform.replace('translateX(', '').replace('px)', '') || 0);
+});
+
+carousel.addEventListener('touchmove', (e) => {
+  if (!isDraggingTouch) return;
+
+  const diffX = e.touches[0].clientX - startXTouch;
+  const translateX = currentTranslateX + diffX;
+
+  carousel.style.transition = 'none'; // Remove a transição durante o arrastar
+  carousel.style.transform = `translateX(${translateX}px)`;
+});
+
+carousel.addEventListener('touchend', () => {
+  isDraggingTouch = false;
+
+  const translateX = parseFloat(carousel.style.transform.replace('translateX(', '').replace('px)', '') || 0);
+  currentIndex = Math.round(translateX / -210); // Recalcula o índice
 });
 
 // Função para reposicionar o carrossel
